@@ -26,6 +26,7 @@ app.get("/test", (req, res) => {
   res.send("Hello World!");
 });
 
+
 app.use("/server/user", userRouter);
 app.use("/server/auth", authRouter);
 
