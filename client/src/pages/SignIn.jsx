@@ -69,14 +69,16 @@ const SignIn = () => {
       <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-3 border rounded-lg"
-          id="email"
-          onChange={handleChange}
-        />
-        {error.email && <p className="text-red-500">{error.email}</p>}
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 border rounded-lg"
+            id="email"
+            onChange={handleChange}
+          />
+          {error.email && <p className="text-red-500">{error.email}</p>}
+        </div>
 
         <div className="relative">
           <input
@@ -92,8 +94,8 @@ const SignIn = () => {
           >
             {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </span>
+          {error.password && <p className="text-red-500">{error.password}</p>}
         </div>
-        {error.password && <p className="text-red-500">{error.password}</p>}
 
         <button
           type="submit"
