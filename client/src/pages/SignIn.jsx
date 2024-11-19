@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice.js";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from "../redux/user/userSlice.js";
+import OAuths from "../components/OAuths.jsx";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -95,6 +100,8 @@ const SignIn = () => {
         >
           {loading ? "Loading..." : "Sign In"}
         </button>
+
+        <OAuths />
 
         {error && <p className="text-red-500">{error}</p>}
       </form>

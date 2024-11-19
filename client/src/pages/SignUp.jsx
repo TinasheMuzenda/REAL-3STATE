@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import OAuths from "../components/OAuths";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -179,6 +180,8 @@ const SignUp = () => {
         >
           {loading ? "Loading..." : "Sign Up"}
         </button>
+
+        <OAuths />
 
         {error.general && <p className="text-red-500">{error.general}</p>}
       </form>
